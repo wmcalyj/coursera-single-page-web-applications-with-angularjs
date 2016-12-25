@@ -14,7 +14,7 @@
         var itemArrays = items.split(",");
         var count = 0;
         for (var i = 0; i < itemArrays.length; i++) {
-          if(itemArrays[i]){
+          if(itemArrays[i].trim()){
             count++;
           }
         }
