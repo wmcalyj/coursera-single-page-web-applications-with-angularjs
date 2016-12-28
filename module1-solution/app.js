@@ -9,7 +9,7 @@
     $scope.checkItems = function () {
       var items = $scope.items;
       if(!items){
-        $scope.state = 'Please enter data first'
+        $scope.state = 'Please enter data first';
       }else {
         var itemArrays = items.split(",");
         var count = 0;
@@ -18,7 +18,9 @@
             count++;
           }
         }
-        if(count <= 3){
+        if(count == 0){
+          $scope.state = 'Please enter data first';
+        }else if (count <= 3) {
           $scope.state = 'Enjoy!';
         }else {
           $scope.state = 'Too much!';
