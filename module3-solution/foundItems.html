@@ -1,0 +1,20 @@
+<div class="found-results">
+  <ul>
+    <table class="results-container" ng-if="foundResults.length > 0" border="1">
+      <tr>
+        <th width="22%" style="text-align: center;">Name</td>
+        <th width="15%" style="text-align: center;">Short Name</td>
+        <th width="43%" style="text-align: center;">Description</td>
+        <th width="20%" style="text-align: center;">Action</td>
+      </tr>
+      <tr ng-repeat="item in foundResults" class="results-container">
+          <td width="22%" style="padding-left: 5px;">{{item.name}}</div>
+          <td width="15%" style="padding-left: 5px;">{{item.shortName}}</div>
+          <td width="43%" style="padding-left: 5px;">{{item.description}}</div>
+          <td width="20%" style="padding-left: 5px;">
+            <button ng-click="onRemove({index: $index})">Don't want this one</button>
+          </div>
+      </tr>
+    </table>
+  </ul>
+</div>
