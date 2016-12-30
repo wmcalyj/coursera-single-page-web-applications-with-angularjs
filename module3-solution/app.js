@@ -17,11 +17,12 @@
       }
     };
 
-    return ddo;
-  }
+    function FoundItemsDirectiveController() {
+      var controller = this;
+      controller.mySearchTerm = MenuSearchService.searchTerm;
+    }
 
-  function FoundItemsDirectiveController() {
-    var controller = this;
+    return ddo;
   }
 
   MenuSearchService.$inject = ['$http','BaseURL', 'PathURI'];
@@ -32,6 +33,7 @@
         method: "GET",
         url: (BaseURL + PathURI)
       });
+      service.mySearchTerm = searchTerm;
       return response.then(function (result){
         var results = result.data;
         var items = results.menu_items;
@@ -53,18 +55,16 @@
   function NarrowItDownController(MenuSearchService) {
     var controller = this;
     controller.narrowDown = function () {
-    var promise = MenuSearchService.getMatchedMenuItems(controller.searchTerm);
-    promise.then(function (found) {
-      controller.found = found;
-    })
-    .catch(function (error) {
-      console.log("Something went terribly wrong.");
-    });
-
+      var promise = MenuSearchService.getMatchedMenuItems(controller.searchTerm);
+      promise.then(function (found) {
+        controller.found = found;
+      })
+      .catch(function (error) {
+        console.log("Something went terribly wrong.");
+      });
     };
 
     controller.onRemove = function (index) {
-      console.log("Remove index: ", index);
       controller.found.splice(index, 1);
     };
   }

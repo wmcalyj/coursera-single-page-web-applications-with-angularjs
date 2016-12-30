@@ -40,6 +40,9 @@ table {
   width: 3em;
   height: 3em;
 }
+.errorMessage {
+  color: red;
+}
 @-webkit-keyframes load8 {
   0% {
     -webkit-transform: rotate(0deg);
