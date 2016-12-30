@@ -18,8 +18,6 @@
     <div class="form-group narrow-button">
       <button class="btn btn-primary" ng-click="narrowController.narrowDown();">Narrow It Down For Me!</button>
     </div>
-    <label>Note: search for nothing will get all items in the menu</label>
-
     <!-- found-items should be implemented as a component -->
     <found-items found-results="narrowController.found" on-remove="narrowController.onRemove(index)"></found-items>
   </div>
