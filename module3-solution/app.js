@@ -38,7 +38,7 @@
         var results = result.data;
         var items = results.menu_items;
         if(!searchTerm){
-          return items;
+          return [];
         }
         var found = [];
         for (var i = 0; i < items.length; i++) {
