@@ -1,0 +1,25 @@
+body {
+  font-size: 1.2em;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+  display: none;
+}
+
+.loading-icon {
+  position: absolute;
+  left: 50%;
+  top: 10px;
+}
+
+table {
+  border-collapse: separate;
+  width: 100%;
+  border: 1px solid black;
+}
+
+th {
+    text-align: center;
+}

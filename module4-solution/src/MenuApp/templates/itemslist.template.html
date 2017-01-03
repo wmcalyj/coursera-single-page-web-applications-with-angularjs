@@ -1,0 +1,31 @@
+<table  border="1">
+  <tr>
+    <th width="3%">ID</th>
+    <th width="6%">Short Name</th>
+    <th width="11%">Name</th>
+    <th width="50%">Description</th>
+    <th width="15%">Small Portion Price</th>
+    <th width="15%">Large Portion Price</th>
+  </tr>
+
+  <tr ng-repeat="item in $ctrl.items.menu_items" >
+    <td width="3%" style="text-align: center;" >{{item.id}}</td>
+    <td width="6%" style="text-align: center;">{{item.short_name}}</td>
+    <td width="11%" style="text-align: center;">{{item.name}}</td>
+    <td width="50%" style="padding-left: 3px;">{{item.description}}</td>
+    <td width="15%" style="text-align: center;">
+      <div ng-if="item.price_small && item.small_portion_name">
+        {{'$' + item.price_small}}/{{item.small_portion_name}}
+      </div>
+    </td>
+    <td width="15%" style="text-align: center;">
+      <div ng-if="!item.large_portion_name">
+        ${{item.price_large}}
+      </div>
+      <div ng-if="item.price_large && item.large_portion_name">
+        ${{item.price_large}}/{{item.large_portion_name}}
+      </div>
+    </td>
+  </tr>
+
+</table>
