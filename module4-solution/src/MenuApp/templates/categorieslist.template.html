@@ -1,22 +1,26 @@
+<div>
+  <span style="color: red;">Click on short name to view all items for that category</span>
+</div>
 <table  border="1">
   <tr>
     <th width="2%">ID</th>
-    <th width="5%">Name</th>
-    <th width="5%">Short Name</th>
+    <th width="7%">Name</th>
+    <th width="10%">Short Name</th>
     <th width="81%">Special Instructions</th>
-    <th width="7%">Action</th>
   </tr>
 
   <tr ng-repeat="category in $ctrl.categories.data" >
     <td width="2%" style="text-align: center;">{{category.id}}</td>
-    <td width="5%" style="text-align: center;">{{category.name}}</td>
-    <td width="5%" style="text-align: center;">{{category.short_name}}</td>
-    <td width="81%" style="padding-left: 5px;">{{category.special_instructions}}</td>
     <td width="7%" style="text-align: center;">
-      <a ui-sref="items({categoryShortName: category.short_name})">
-        View Items
-      </a>
+      {{category.name}}
     </td>
+    <td width="10%" style="text-align: center;">
+      <button class="short_name_button" ui-sref="items({categoryShortName: category.short_name})">
+        {{category.short_name}}
+      </button>
+    </td>
+    <td width="81%" style="padding-left: 5px;">{{category.special_instructions}}</td>
+
   </tr>
 
 </table>
